@@ -7,7 +7,11 @@ import { Component, OnInit  } from '@angular/core';
 })
 export class BuscarPQRSComponent implements OnInit {
 
-  constructor() { }
+  variablePrueba: any;
+
+  constructor() {
+    this.variablePrueba="";
+   }
 
   ngOnInit(): void {
   }

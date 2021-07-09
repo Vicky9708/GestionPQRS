@@ -4,16 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GestionarPQRSComponent } from './components/gestionar-pqrs/gestionar-pqrs.component';
+
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { BuscarPQRSComponent } from './components/buscar-pqrs/buscar-pqrs.component';
 import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';
+import { BuscarPQRSComponent } from './components/buscar-pqrs/buscar-pqrs.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    GestionarPQRSComponent
+    BienvenidaComponent,
+    BuscarPQRSComponent
   ],
   imports: [
     BrowserModule,
