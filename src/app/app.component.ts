@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'GestionPQRS';
+  mostrarBarras=true;
+
+
+  constructor(){
+    let pathname = window.location.pathname;
+    this.mostrarBarras=pathname=='/bienvenida'||pathname=='/'?false:true;
+
+  }
 }

@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';
 import { BuscarPQRSComponent } from './components/buscar-pqrs/buscar-pqrs.component';
+import { ConsultarEstadoPQRSComponent } from './components/consultar-estado-pqrs/consultar-estado-pqrs.component';
+import { HeaderComponent } from './components/componentesTransversales/header/header.component';
+import { SideNavComponent } from './components/componentesTransversales/side-nav/side-nav.component';
 
 
 
@@ -15,7 +18,10 @@ import { BuscarPQRSComponent } from './components/buscar-pqrs/buscar-pqrs.compon
   declarations: [
     AppComponent,
     BienvenidaComponent,
-    BuscarPQRSComponent
+    BuscarPQRSComponent,
+    ConsultarEstadoPQRSComponent,
+    HeaderComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,

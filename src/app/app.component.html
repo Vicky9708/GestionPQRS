@@ -1,2 +1,9 @@
 
-<router-outlet></router-outlet>
+ <router-outlet *ngIf="!mostrarBarras"></router-outlet>
+  <app-header *ngIf="mostrarBarras"></app-header>
+  <div class="flex flex-row">
+    <app-side-nav *ngIf="mostrarBarras"></app-side-nav>
+    <router-outlet *ngIf="mostrarBarras"></router-outlet>
+  </div>
+
+
