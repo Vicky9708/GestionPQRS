@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-nav.component.scss']
 })
 export class SideNavComponent implements OnInit {
-  itemBuscar='';
-  itemConsulta='';
+  itemBuscar=false;
+  itemConsulta=false;
   constructor() {
     let pathname = window.location.pathname;
-    this.itemConsulta=pathname=='/consultar-estado'?'bg-pink-600':'';
-    this.itemBuscar=pathname=='/buscar-solicitud'?'bg-pink-600':'';
+    this.itemConsulta=pathname=='/consultar-estado'?true:false;
+    this.itemBuscar=pathname=='/buscar-solicitud'?true:false;
    }
 
   ngOnInit(): void {
