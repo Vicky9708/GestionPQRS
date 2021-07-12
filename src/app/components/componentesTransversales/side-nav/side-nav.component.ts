@@ -10,8 +10,8 @@ export class SideNavComponent implements OnInit {
   itemConsulta=false;
   constructor() {
     let pathname = window.location.pathname;
-    this.itemConsulta=pathname=='/consultar-estado'?true:false;
-    this.itemBuscar=pathname=='/buscar-solicitud'?true:false;
+    this.itemConsulta=pathname=='/consultar-estado' || pathname=="/resultados-pqrs"?true:false;
+    this.itemBuscar=pathname=='/buscar-solicitud' ?true:false;
    }
 
   ngOnInit(): void {

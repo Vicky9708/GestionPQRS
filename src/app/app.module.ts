@@ -11,7 +11,8 @@ import { BuscarPQRSComponent } from './components/buscar-pqrs/buscar-pqrs.compon
 import { ConsultarEstadoPQRSComponent } from './components/consultar-estado-pqrs/consultar-estado-pqrs.component';
 import { HeaderComponent } from './components/componentesTransversales/header/header.component';
 import { SideNavComponent } from './components/componentesTransversales/side-nav/side-nav.component';
-
+import { ResultadoConsultaPQRSComponent } from './components/resultado-consulta-pqrs/resultado-consulta-pqrs.component';
+import {HttpClientModule} from '@angular/common/http'
 
 
 @NgModule({
@@ -21,13 +22,15 @@ import { SideNavComponent } from './components/componentesTransversales/side-nav
     BuscarPQRSComponent,
     ConsultarEstadoPQRSComponent,
     HeaderComponent,
-    SideNavComponent
+    SideNavComponent,
+    ResultadoConsultaPQRSComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

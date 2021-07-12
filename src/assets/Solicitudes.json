@@ -1,0 +1,176 @@
+{
+"solicitudes":[{
+  "id":1,
+  "tipo": "Queja",
+  "titulo": "Titulo de la queja",
+  "numeroRadicado":"0000000-001",
+  "descripcion": "Descripción de la queja",
+  "fechaCreacion": "2021-05-05",
+  "correo":"mail1@prueba.com",
+  "celular":"3188888888",
+  "pin":1234
+},
+{
+  "id":5,
+  "tipo": "Petición",
+  "titulo": "Titulo de la petición",
+  "numeroRadicado":"0000000-0120",
+  "descripcion": "Descripción de la petición",
+  "fechaCreacion": "2021-05-05",
+  "correo":"mail1@prueba.com",
+  "celular":"3188888888",
+  "pin":1234
+},
+{
+  "id":6,
+  "tipo": "Reclamo",
+  "titulo": "Titulo de la reclamo",
+  "numeroRadicado":"0000000-512",
+  "descripcion": "Descripción de la reclamo",
+  "fechaCreacion": "2021-05-05",
+  "correo":"mail1@prueba.com",
+  "celular":"3188888888",
+  "pin":1234
+},
+{
+  "id":2,
+  "tipo":"Petición",
+  "descripcion": "Descripción de la petición",
+  "titulo": "Titulo de la petición",
+  "numeroRadicado":"0000000-002",
+  "fechaCreacion": "2021-05-06",
+  "correo":"mail2@prueba.com",
+  "celular":"3188888887",
+  "pin":2345
+},
+{
+  "id":3,
+  "tipo":"Reclamo",
+  "titulo": "Titulo del reclamo",
+  "numeroRadicado":"0000000-003",
+  "descripcion": "Descripción del reclamo",
+  "fechaCreacion": "2021-05-07",
+  "correo":"mail3@prueba.com",
+  "celular":"3188888886",
+  "pin":3456
+},
+{
+  "id":4,
+  "tipo":"Sugerencia",
+  "titulo": "Titulo de la sugerencia",
+  "numeroRadicado":"0000000-004",
+  "descripcion": "Descripción de la sugerencia",
+  "fechaCreacion": "2021-05-08",
+  "correo":"mail4@prueba.com",
+  "celular":"3188888885",
+  "pin":4567
+}
+],
+"seguimientoSolicitud":[{
+  "id":1,
+  "estado": "Recibido",
+  "fecha": "2021-05-05",
+  "comentario": "Se recibe y se pasa para el area administrativa",
+  "areaEncargada": "Recepción",
+  "idSolicitud":1
+},
+{
+  "id":2,
+  "estado": "En proceso",
+  "fecha": "2021-05-06",
+  "comentario": "La respuesta d ela petición fue enviada correo electrónico",
+  "areaEncargada": "Administración",
+  "idSolicitud":1
+},
+{
+  "id":2,
+  "estado": "Resuelto",
+  "fecha": "2021-05-07",
+  "comentario": "La respuesta d ela petición fue enviada correo electrónico",
+  "areaEncargada": "Administración",
+  "idSolicitud":1
+},
+{
+  "id":3,
+  "estado": "En proceso",
+  "fecha": "2021-05-05",
+  "comentario": "Se recibe y se pasa para el area administrativa",
+  "areaEncargada": "Recepción",
+  "idSolicitud":2
+},
+{
+  "id":4,
+  "estado": "Recibido",
+  "fecha": "2021-05-06",
+  "comentario": "Se recibe y se pasa para el area administrativa",
+  "areaEncargada": "Recepción",
+  "idSolicitud":2
+},
+{
+  "id":5,
+  "estado": "Recibido",
+  "fecha": "2021-05-04",
+  "comentario": "Se recibe y se pasa para el area administrativa",
+  "areaEncargada": "Recepción",
+  "idSolicitud":3
+},
+{
+  "id":6,
+  "estado": "Recibido",
+  "fecha": "2021-05-05",
+  "comentario": "Se recibe y se pasa para el area administrativa",
+  "areaEncargada": "Recepción",
+  "idSolicitud":3
+},
+{
+  "id":7,
+  "estado": "Recibido",
+  "fecha": "2021-05-05",
+  "comentario": "Se recibe y se pasa para el area administrativa",
+  "areaEncargada": "Recepción",
+  "idSolicitud":4
+},
+{
+  "id":8,
+  "estado": "Recibido",
+  "fecha": "2021-05-06",
+  "comentario": "Se recibe y se pasa para el area administrativa",
+  "areaEncargada": "Recepción",
+  "idSolicitud":4
+}
+],
+"tramites":
+[
+{
+  "fecha": "2021-05-05",
+  "tipo": "PQRS",
+  "titulo": "Queja sobre el area financiera por el mal servicio",
+  "descripcion":"El día de ayer realice un pago y me cobraron más de lo que salía en el recibo, justificando que había un nuevo IVA por parte de la empresa",
+  "id":0
+},
+{
+  "fecha": "2021-05-06",
+  "tipo": "factura",
+  "titulo": "Entrega factura AL-00001",
+  "descripcion":"El día de ayer realice un pago y me cobraron más de lo que salía en el recibo, justificando que había un nuevo IVA por parte de la empresa",
+  "id":1
+},{
+  "fecha": "2021-05-07",
+  "tipo": "PQRS",
+  "titulo": "Queja sobre el area financiera por el mal servicio",
+  "descripcion":"El día de ayer realice un pago y me cobraron más de lo que salía en el recibo, justificando que había un nuevo IVA por parte de la empresa",
+  "id":2
+},{
+  "fecha": "2021-05-08",
+  "tipo": "factura",
+  "titulo": "Entrega factura AL-00002",
+  "descripcion":"El día de ayer realice un pago y me cobraron más de lo que salía en el recibo, justificando que había un nuevo IVA por parte de la empresa",
+  "id":3
+},{
+  "fecha": "2021-05-09",
+  "tipo": "PQRS",
+  "titulo": "Queja sobre el area administrativa por el mal servicio",
+  "descripcion":"El día de ayer realice un pago y me cobraron más de lo que salía en el recibo, justificando que había un nuevo IVA por parte de la empresa",
+  "id":4
+}]
+}

@@ -1,10 +1,13 @@
 <div class="p-5 flex flex-col lg:pl-40">
   <h1 class="text-5xl">Buscar trámites</h1>
   <br>
+  <p>Aquí encontrará los trámites que tiene inscritos</p>
+  <br>
+
   <div class="flex flex-row">
     <div class="flex flex-col">
       <label>Tipo</label>
-      <select [(ngModel)]="tipo" (change)="filtrar(1)" class="border-2 border-gray-300 p-2 rounded-md">
+      <select [(ngModel)]="tipo" (change)="filtrar()" class="border-2 border-gray-300 p-2 rounded-md">
         <option value="PQRS">PQRS</option>
         <option value="factura">Factura de proveedores</option>
         <option value="todos">Todos</option>
@@ -12,9 +15,13 @@
     </div>
     <div class="flex flex-col ml-3">
       <label>Fecha</label>
-      <input type="date" [(ngModel)]="fecha" (change)="filtrar(2)" value={{fecha}} class="border-2 border-gray-300 p-2 rounded-md">
+      <input type="date" [(ngModel)]="fecha" (change)="filtrar()" value={{fecha}} class="border-2 border-gray-300 p-2 rounded-md">
     </div>
-
+    <div title="Limpiar filtros" (click)="limpiarFiltros()" class="pt-8 pl-8 text-indigo-600 hover:text-pink-500">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+      </svg>
+    </div>
   </div>
   <br>
   <br>
@@ -53,7 +60,7 @@
                   <div class="text-sm text-gray-900">{{item.titulo}}</div>
                 </td>
 
-                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium centrarIconosTablas">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium centrarIconosTablas" title="Ver">
                   <svg (click)="verDetalleTramite(item.id)" xmlns="http://www.w3.org/2000/svg"
                     class="h-5 w-5 text-indigo-600 hover:text-pink-500" viewBox="0 0 20 20" fill="currentColor"
                     placeholder="Ver">

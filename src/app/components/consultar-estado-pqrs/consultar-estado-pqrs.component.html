@@ -18,11 +18,14 @@
 
   </div>
   <br>
-  <a class="text-center"  >
+  <div  class="text-center" >
     <button [disabled]="hablilitarBotonConsultar.includes('200')" (click)="consultarEstadoPQRS()" [ngClass]="hablilitarBotonConsultar">
       Consultar
     </button>
-    </a>
+  </div>
+  <div *ngIf="mostrarMensaje" class="text-center">
+    <i>No se encontró resultado para la búsqueda</i>
+  </div>
 
 </div>
 

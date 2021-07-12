@@ -1,5 +1,5 @@
 import { Component, OnInit  } from '@angular/core';
-import * as moment from 'moment';
+import { JsonService } from 'src/app/services/json.service';
 
 @Component({
   selector: 'app-buscar-pqrs',
@@ -14,43 +14,17 @@ export class BuscarPQRSComponent implements OnInit {
   idTramiteActual:any;
   arregloFiltrado:any;
 
-  constructor() {
+  constructor(public json:JsonService) {
     this.tipo='todos';
     this.activarModal=false;
     this.idTramiteActual=0;
-    this.arregloPrincipal=[{
-      fecha: '2021-05-05',
-      tipo: 'PQRS',
-      titulo: 'Queja sobre el area financiera por el mal servicio',
-      descripcion:'El día de ayer realice un pago y me cobraron más de lo que salía en el recibo, justificando que había un nuevo IVA por parte de la empresa',
-      id:0
-    },
-    {
-      fecha: '2021-05-06',
-      tipo: 'factura',
-      titulo: 'Entrega factura AL-00001',
-      descripcion:'El día de ayer realice un pago y me cobraron más de lo que salía en el recibo, justificando que había un nuevo IVA por parte de la empresa',
-      id:1
-    },{
-      fecha: '2021-05-07',
-      tipo: 'PQRS',
-      titulo: 'Queja sobre el area financiera por el mal servicio',
-      descripcion:'El día de ayer realice un pago y me cobraron más de lo que salía en el recibo, justificando que había un nuevo IVA por parte de la empresa',
-      id:2
-    },{
-      fecha: '2021-05-08',
-      tipo: 'factura',
-      titulo: 'Entrega factura AL-00002',
-      descripcion:'El día de ayer realice un pago y me cobraron más de lo que salía en el recibo, justificando que había un nuevo IVA por parte de la empresa',
-      id:3
-    },{
-      fecha: '2021-05-05',
-      tipo: 'PQRS',
-      titulo: 'Queja sobre el area administrativa por el mal servicio',
-      descripcion:'El día de ayer realice un pago y me cobraron más de lo que salía en el recibo, justificando que había un nuevo IVA por parte de la empresa',
-      id:4
-    }];
-    this.arregloFiltrado=this.arregloPrincipal
+
+    //Servicio que consume el api de los tramites
+    this.json.getJson('http://localhost:3000/tramites').subscribe((res:any)=>{
+      this.arregloPrincipal=res;
+      this.arregloFiltrado=this.arregloPrincipal
+    })
+
 
 
    }
@@ -67,19 +41,26 @@ export class BuscarPQRSComponent implements OnInit {
   }
   /**
    * Metodo que filtra por tipo o por fecha
-   * @param filtro  indica cual filtro esta aplicando el usuario
    */
-   filtrar(filtro:any){
-     //Si el filtro es por tipo
-    if(filtro==1){
-      this.arregloFiltrado=this.tipo!='todos'?this.arregloPrincipal.filter((x:any)=>x.tipo===this.tipo):this.arregloPrincipal
-    }//Si el filtro es por fecha
-    else if(filtro==2){
-      this.arregloFiltrado=this.arregloPrincipal.filter((x:any)=>x.fecha===this.fecha)
-    }
+   filtrar(){
+     if(this.fecha!='' &&this.fecha!=undefined){
+      this.arregloFiltrado=this.tipo!='todos'?this.arregloPrincipal.filter((x:any)=>x.tipo===this.tipo && x.fecha==this.fecha):
+      this.arregloPrincipal.filter((x:any)=>x.fecha===this.fecha)
+
+     }
+   else{
+    this.arregloFiltrado=this.tipo!='todos'?this.arregloPrincipal.filter((x:any)=>x.tipo===this.tipo):this.arregloPrincipal
 
    }
 
-
+  }
+  /**
+   * Metodo que limpia los filtros de los tramites
+   */
+  limpiarFiltros(){
+    this.tipo='todos';
+    this.fecha=undefined;
+      this.arregloFiltrado=this.arregloPrincipal;
+  }
 
 }
