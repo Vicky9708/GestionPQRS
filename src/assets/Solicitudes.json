@@ -1,10 +1,10 @@
 {
 "solicitudes":[{
   "id":1,
-  "tipo": "Queja",
-  "titulo": "Titulo de la queja",
+  "tipo": "Reclamo",
+  "titulo": "Aumento injustificado del precio de la factura",
   "numeroRadicado":"0000000-001",
-  "descripcion": "Descripción de la queja",
+  "descripcion": "El día 3 de Mayo se me generó la factura y como de costumbre iba a realizar el pago, pero al abrirla estaba $50.000 más cara del cobro pactado en sesiones anteriores",
   "fechaCreacion": "2021-05-05",
   "correo":"mail1@prueba.com",
   "celular":"3188888888",
@@ -13,20 +13,9 @@
 {
   "id":5,
   "tipo": "Petición",
-  "titulo": "Titulo de la petición",
+  "titulo": "Retiro de servicios instalados",
   "numeroRadicado":"0000000-0120",
-  "descripcion": "Descripción de la petición",
-  "fechaCreacion": "2021-05-05",
-  "correo":"mail1@prueba.com",
-  "celular":"3188888888",
-  "pin":1234
-},
-{
-  "id":6,
-  "tipo": "Reclamo",
-  "titulo": "Titulo de la reclamo",
-  "numeroRadicado":"0000000-512",
-  "descripcion": "Descripción de la reclamo",
+  "descripcion": "Solicito el retiro de los servicios debido a que me voy del país y ya no utilizare dichos servicios",
   "fechaCreacion": "2021-05-05",
   "correo":"mail1@prueba.com",
   "celular":"3188888888",
@@ -35,42 +24,20 @@
 {
   "id":2,
   "tipo":"Petición",
-  "descripcion": "Descripción de la petición",
-  "titulo": "Titulo de la petición",
+  "descripcion": "Pido cordialmente el aumento del salario, ya que llevo más de dos años con el mismo salario y el nivel de exigencia a aumentado",
+  "titulo": "Aumento de salario",
   "numeroRadicado":"0000000-002",
   "fechaCreacion": "2021-05-06",
   "correo":"mail2@prueba.com",
   "celular":"3188888887",
   "pin":2345
-},
-{
-  "id":3,
-  "tipo":"Reclamo",
-  "titulo": "Titulo del reclamo",
-  "numeroRadicado":"0000000-003",
-  "descripcion": "Descripción del reclamo",
-  "fechaCreacion": "2021-05-07",
-  "correo":"mail3@prueba.com",
-  "celular":"3188888886",
-  "pin":3456
-},
-{
-  "id":4,
-  "tipo":"Sugerencia",
-  "titulo": "Titulo de la sugerencia",
-  "numeroRadicado":"0000000-004",
-  "descripcion": "Descripción de la sugerencia",
-  "fechaCreacion": "2021-05-08",
-  "correo":"mail4@prueba.com",
-  "celular":"3188888885",
-  "pin":4567
 }
 ],
 "seguimientoSolicitud":[{
   "id":1,
   "estado": "Recibido",
   "fecha": "2021-05-05",
-  "comentario": "Se recibe y se pasa para el area administrativa",
+  "comentario": "Se recibe y se pasa para el area administrativa para la respectiva revisión ya que es un caso que necesita ser revisado directamente por la gerencia de la organización, para dar una respuesta concreta",
   "areaEncargada": "Recepción",
   "idSolicitud":1
 },
@@ -78,21 +45,21 @@
   "id":2,
   "estado": "En proceso",
   "fecha": "2021-05-06",
-  "comentario": "La respuesta d ela petición fue enviada correo electrónico",
-  "areaEncargada": "Administración",
+  "comentario": "Le pedimos disculpas desde el área gerencial, ya estamos trabajando para solucionar el problema lo más rápido posible ",
+  "areaEncargada": "Gerencia",
   "idSolicitud":1
 },
 {
   "id":2,
   "estado": "Resuelto",
   "fecha": "2021-05-07",
-  "comentario": "La respuesta d ela petición fue enviada correo electrónico",
-  "areaEncargada": "Administración",
+  "comentario": "La factura ya fue actualizada al valor correspondiente, la equivocación fue debido a una falla interna del sistema al generarse la factura",
+  "areaEncargada": "Gerencia",
   "idSolicitud":1
 },
 {
   "id":3,
-  "estado": "En proceso",
+  "estado": "Recibido",
   "fecha": "2021-05-05",
   "comentario": "Se recibe y se pasa para el area administrativa",
   "areaEncargada": "Recepción",
@@ -100,43 +67,20 @@
 },
 {
   "id":4,
-  "estado": "Recibido",
+  "estado": "En proceso",
   "fecha": "2021-05-06",
-  "comentario": "Se recibe y se pasa para el area administrativa",
-  "areaEncargada": "Recepción",
+  "comentario": "Se esta realizando la validación con el área de finanzas para dar respuesta a esta solicitud.",
+  "areaEncargada": "Financiera",
   "idSolicitud":2
-},
+}
+,
 {
   "id":5,
   "estado": "Recibido",
-  "fecha": "2021-05-04",
-  "comentario": "Se recibe y se pasa para el area administrativa",
-  "areaEncargada": "Recepción",
-  "idSolicitud":3
-},
-{
-  "id":6,
-  "estado": "Recibido",
-  "fecha": "2021-05-05",
-  "comentario": "Se recibe y se pasa para el area administrativa",
-  "areaEncargada": "Recepción",
-  "idSolicitud":3
-},
-{
-  "id":7,
-  "estado": "Recibido",
-  "fecha": "2021-05-05",
-  "comentario": "Se recibe y se pasa para el area administrativa",
-  "areaEncargada": "Recepción",
-  "idSolicitud":4
-},
-{
-  "id":8,
-  "estado": "Recibido",
   "fecha": "2021-05-06",
   "comentario": "Se recibe y se pasa para el area administrativa",
   "areaEncargada": "Recepción",
-  "idSolicitud":4
+  "idSolicitud":5
 }
 ],
 "tramites":
@@ -152,25 +96,25 @@
   "fecha": "2021-05-06",
   "tipo": "factura",
   "titulo": "Entrega factura AL-00001",
-  "descripcion":"El día de ayer realice un pago y me cobraron más de lo que salía en el recibo, justificando que había un nuevo IVA por parte de la empresa",
+  "descripcion":"Se entrega factura con todos los items comprados para la mejora de los puestos de trabajo de los colaboradores",
   "id":1
 },{
   "fecha": "2021-05-07",
   "tipo": "PQRS",
-  "titulo": "Queja sobre el area financiera por el mal servicio",
-  "descripcion":"El día de ayer realice un pago y me cobraron más de lo que salía en el recibo, justificando que había un nuevo IVA por parte de la empresa",
+  "titulo": "Aumento de salario",
+  "descripcion":"Pido cordialmente el aumento del salario, ya que llevo más de dos años con el mismo salario y el nivel de exigencia a aumentado",
   "id":2
 },{
   "fecha": "2021-05-08",
   "tipo": "factura",
   "titulo": "Entrega factura AL-00002",
-  "descripcion":"El día de ayer realice un pago y me cobraron más de lo que salía en el recibo, justificando que había un nuevo IVA por parte de la empresa",
+  "descripcion":"Se realizó la compra de cafetera, ya que la anterior se dañó y no tenía arreglo, anexo factura con las especificaciones ",
   "id":3
 },{
   "fecha": "2021-05-09",
   "tipo": "PQRS",
-  "titulo": "Queja sobre el area administrativa por el mal servicio",
-  "descripcion":"El día de ayer realice un pago y me cobraron más de lo que salía en el recibo, justificando que había un nuevo IVA por parte de la empresa",
+  "titulo": "Retiro de servicios instalados",
+  "descripcion":"Solicito el retiro de los servicios debido a que me voy del país y ya no utilizare dichos servicios",
   "id":4
 }]
 }

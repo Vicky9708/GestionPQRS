@@ -40,16 +40,18 @@ export class ResultadoConsultaPQRSComponent implements OnInit {
    * @param i posicion del acordeon
    */
   activarAcordeon(i:number,id:number){
-
     /**
-     * Se consum el servicio del seguimiento de las solicitudes
+     * Se consume el servicio del seguimiento de las solicitudes
      */
     this.json.getJson('http://localhost:3000/seguimientoSolicitud?idSolicitud='+id).subscribe((res:any)=>{
 
       this.arregloSeguimientoSolicitud=res;
-      this.arregloSolicitudes.forEach((element: any)=> {
-        element.activar=false;
-      });
+      for (let j = 0; j < this.arregloSolicitudes.length; j++) {
+           if(i!=j){
+             this.arregloSolicitudes[j].activar=false;
+           }
+      }
+
       this.arregloSolicitudes[i].activar=this.arregloSolicitudes[i].activar?false:true;
 
     })

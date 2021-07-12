@@ -20,10 +20,14 @@ export class ConsultarEstadoPQRSComponent implements OnInit {
   mostrarErrorCorreo: any;
   id:any;
   mostrarMensaje:any;
+  mostrarErrorCelular:any;
+  mostrarErrorPin:any;
 
 
   constructor(public json: JsonService) {
     //Estilos iniciales del input
+    this.mostrarErrorPin="border-2 border-gray-300 rounded-md p-1";
+    this.mostrarErrorCelular="border-2 border-gray-300 rounded-md p-1"
     this.mostrarErrorCorreo='border-gray-300 border-2 rounded-md p-1';
     this.hablilitarBotonConsultar='font-medium rounded-md p-2 text-white bg-indigo-200  border border-transparent justify-center';
     this.mostrarMensaje=false;
@@ -45,14 +49,29 @@ export class ConsultarEstadoPQRSComponent implements OnInit {
     }
 
   }
+  /**
+   * Metodo que valida que el campo de celular tenga el minimo requerido
+   */
+  validarFormatoCelular(){
+    this.mostrarErrorCelular=this.celular.length<10 && (this.celular!=undefined && this.celular!='')?"border-2 border-red-800 rounded-md p-1":"border-2 border-gray-300 rounded-md p-1";
+
+  }
+
+    /**
+   * Metodo que valida que el campo de pin tenga minimo 4 digitos
+   */
+     validarFormatoPin(){
+      this.mostrarErrorPin=this.pin.length<4 &&(this.pin!=undefined && this.pin!='')?"border-2 border-red-800 rounded-md p-1":"border-2 border-gray-300 rounded-md p-1";
+
+    }
 
   /**
    * Metodo que valida el formulario general
    */
   validarFormatoGeneral(){
       this.mostrarMensaje=false;
-      this.hablilitarBotonConsultar=((this.correoElectronico!=''&&this.correoElectronico!=undefined)||
-      (this.celular!=''&&this.celular!=undefined))&&this.pin!=''&& this.pin!=undefined ?'font-medium rounded-md p-2 text-white bg-indigo-500  border border-transparent justify-center':
+      this.hablilitarBotonConsultar=((this.correoElectronico!=''&&this.correoElectronico!=undefined&&!this.mostrarErrorCorreo.includes('red'))||
+      (this.celular!=''&&this.celular!=undefined&&!this.mostrarErrorCelular.includes('red')))&&(this.pin!=''&& this.pin!=undefined && !this.mostrarErrorPin.includes('red')) ?'font-medium rounded-md p-2 text-white bg-indigo-500  border border-transparent justify-center':
       'font-medium rounded-md p-2 text-white bg-indigo-200  border border-transparent justify-center';
 
   }

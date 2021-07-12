@@ -1,19 +1,22 @@
-<div class="p-5 flex flex-col lg:pl-56">
+<div class="p-5 flex flex-col lg:pl-44">
   <h1 class="text-5xl">Consultar estado PQRS</h1>
   <br>
-  <p>Por favor ingrese la siguiente información para consultar el estado de la PQRS</p>
+  <p>Por favor ingrese el correo electrónico o el telefono celular para consultar el estado de la PQRS</p>
   <br>
   <label>Correo electrónico</label>
   <input  [ngClass]="mostrarErrorCorreo" [(ngModel)]="correoElectronico" value={{correoElectronico}} (change)="validarFormatoCorreo();validarFormatoGeneral()"  type="email"  placeholder="Ingrese su correo..." >
-  <label *ngIf="mostrarErrorCorreo.includes('red')" class="text-sm text-red-800">Formato de correo invalido</label>
+  <label *ngIf="mostrarErrorCorreo.includes('red')" class="text-sm text-red-800">Formato de correo inválido</label>
   <br>
   <label>Teléfono celular</label>
-  <input [(ngModel)]="celular" value={{celular}} (change)="validarFormatoGeneral()" type="text"  minlength="10" maxlength="13" onkeydown="return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))"  class="border-2 border-gray-300 rounded-md p-1" placeholder="Ingrese su número telefónico...">
-
+  <input [(ngModel)]="celular" value={{celular}} (change)="validarFormatoCelular();validarFormatoGeneral();" type="text"  maxlength="13" onkeydown="return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))"  [ngClass]="mostrarErrorCelular" placeholder="Ingrese su número telefónico...">
+  <label *ngIf="mostrarErrorCelular.includes('red')" class="text-sm text-red-800">Ingrese entre 10 y 13 dígitos</label>
   <br>
   <label><span class="text-red-800">*</span>PIN</label>
   <div class="flex flex-row">
-    <div><input [(ngModel)]="pin" (change)="validarFormatoGeneral()" type="text"  maxlength="6" onkeydown="return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))" class="border-2 border-gray-300 rounded-md p-1" placeholder="Ingrese el PIN..."></div>
+    <div class="flex flex-col">
+      <input [ngClass]="mostrarErrorPin" [(ngModel)]="pin" (change)="validarFormatoPin();validarFormatoGeneral();" type="text"  maxlength="6" onkeydown="return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))"  placeholder="Ingrese el PIN...">
+      <label *ngIf="mostrarErrorPin.includes('red')" class="text-sm text-red-800">Ingrese un número de 4 a 6 dígitos</label>
+    </div>
     <div><a class="text-blue-700 pl-2 hover:underline after:bg-indigo-300">¿Olvidó su PIN?</a></div>
 
   </div>
